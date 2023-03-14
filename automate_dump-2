@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Set the database credentials
+export PGHOST=<database hostname>
+export PGUSER=<database username>
+export PGPASSWORD=<database password>
+export PGDATABASE=<database name>
+
+# Set the dump file name and location
+DUMP_FILE="/home/postgres/dumps/$(date +"%Y-%m-%d").sql"
+
+# Create the dump file
+pg_dump > "$DUMP_FILE"
+
+# Copy the dump file to the remote server using SFTP
+sftp -P 22 user@IP_Destination <<EOF
+put $DUMP_FILE /path/on/remote/server/$(date +"%Y-%m-%d").sql
+EOF
+
+
+Edite cron comand :crontab -e
+add in file this command for time execution sh
+30 23 * * * /home/scripts/create-postgres-dump-and-copy.sh
+ 
+Create  /home/scripts/create-postgres-dump-and-copy.sh
+Create Directory 
+
+Autoriez execution command  /bin/chmod +x /home/scripts/create-postgres-dump-and-copy.sh
