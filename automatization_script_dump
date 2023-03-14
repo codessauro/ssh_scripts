@@ -1,0 +1,24 @@
+#!/bin/bash
+echo "Démarrage script de backup postgres" > /var/log/postgresql/backuppsql.log
+echo $(date) >> /var/log/postgresql/backuppsql.log
+echo "Clean des anciens fichiers de dump locaux (7jours)" >> /var/log/postgresql/backuppsql.log
+find /var/lib/postgresql/data/dump/ -type f -mtime +7 -name *.gz -exec rm {} \;
+status_clean=$?
+echo "fin du clean des fichiers $status_clean" >> /var/log/postgresql/backuppsql.log
+echo "pgdump db_asso starting" >> /var/log/postgresql/sivabackuppsql.log
+pg_dump db_asso | gzip > /var/lib/postgresql/data/dump/db_asso-$(date +"%Y-%m-%d").dmp.gz
+status_dump_db_asso=$?
+echo "pgdump db_asso end $status_dump" >> /var/log/postgresql/sivabackuppsql.log
+echo "pgdump passsport starting" >> /var/log/postgresql/sivabackuppsql.log
+pg_dump passsport | gzip > /var/lib/postgresql/data/dump/passsport-$(date +"%Y-%m-%d").dmp.gz
+status_dump_passsport=$?
+echo "pgdump passsport end $status_dump_passsport" >> /var/log/postgresql/backuppsql.log
+echo "Starting transfert into s3" >> /var/log/postgresql/sivabackuppsql.log
+aws s3 cp /var/lib/postgresql/data/dump/db_asso-$(date +"%Y-%m-%d").dmp.gz s3://siva-pgsql/preproduction/  --profile name --endpoint-url=https://storage.cloud
+status_s3=$?
+echo "Transfert S3 done $status_s3" >> /var/log/postgresql/backuppsql.log
+aws s3 cp /var/lib/postgresql/data/dump/passsport-$(date +"%Y-%m-%d").dmp.gz s3://siva-pgsql/preproduction/  --profile name --endpoint-url=https://storage.cloud
+status_s3_passsport=$?
+echo "Transfert S3 done $status_s3_passport" >> /var/log/postgresql/backuppsql.log
+echo "RC Global: $(($status_clean + $status_dump_db_asso + $status_dump_passsport + $status_s3 + $status_s3_passsport))" >> /var/log/postgresql/backuppsql.log
+echo $(date) >> /var/log/postgresql/backuppsql.log
