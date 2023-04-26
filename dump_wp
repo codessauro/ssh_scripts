@@ -38,3 +38,39 @@ UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-produ
 UPDATE wp_posts SET guid = replace(guid, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
 UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-production.cegedim.cloud','https://www.kineis.com'); 
 UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://kineis-production.cegedim.cloud','https://www.kineis.com');
+UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
+
+UPDATE wp_postmeta SET meta_value = replace(meta_value, 'https://kineis-production.cegedim.cloud','https://www.kineis.com'
+
+UPDATE * SET * = REPLACE(*, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
+
+
+SET @OLD_URL = 'https://kineis-production.cegedim.cloud';
+SET @NEW_URL = 'https://www.kineis.com';
+SET @query = NULL;
+
+SELECT GROUP_CONCAT(CONCAT('UPDATE `', TABLE_NAME, '` SET `', COLUMN_NAME, '` = REPLACE(`', COLUMN_NAME, '`, ''', @OLD_URL, ''', ''', @NEW_URL, ''');') SEPARATOR ' ')
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'kineis'
+AND DATA_TYPE IN ('char','varchar','text','mediumtext','longtext')
+AND TABLE_NAME NOT LIKE 'wp_rg_%'
+AND TABLE_NAME NOT LIKE 'wp_msbp_%'
+INTO @query;
+
+PREPARE stmt FROM @query;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+
+
+UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_links SET link_url = replace(link_url, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_comments SET comment_content = replace(comment_content , 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_posts SET post_content = replace(post_content, 'https://www.kineis.com', 'https://kineis-production.cegedim.cloud');
+UPDATE wp_links SET link_image = replace(link_image, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_posts SET guid = replace(guid, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+
+UPDATE wp_options SET option_value = replace(option_value, 'https://www.kineis.com','https://kineis-production.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
+UPDATE wp_posts SET guid = replace(guid, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_posts SET post_content = replace(post_content, 'https://www.kineis.com','https://kineis-production.cegedim.cloud'); 
+UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
