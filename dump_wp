@@ -1,38 +1,38 @@
 
-UPDATE wp_options SET option_value = replace(option_value, 'https://www.kineis.com', 'https://kineis-production.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
-UPDATE wp_posts SET post_content = replace(post_content, 'https://www.kineis.com', 'https://kineis-production.cegedim.cloud');
-UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://www.kineis.com','https://kineis-production.cegedim.cloud');
-UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-production.cegedim.cloud', 'https://kineis-preprod.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
+UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-production.cegedim.cloud', 'https://kineis-preprod.cegedim.cloud');
+UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
+UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
 
-UPDATE wp_links SET link_url = replace(link_url, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_links SET link_url = replace(link_url, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
 
-UPDATE wp_comments SET comment_content = replace(comment_content , 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
-UPDATE wp_posts SET post_content = replace(post_content, 'https://www.kineis.com', 'https://kineis-production.cegedim.cloud');
-UPDATE wp_links SET link_image = replace(link_image, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
-UPDATE wp_posts SET guid = replace(guid, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
-UPDATE wp_options SET option_value = replace(option_value, 'https://www.kineis.com','https://kineis-production.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
+UPDATE wp_comments SET comment_content = replace(comment_content , 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
+UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-production.cegedim.cloud', 'https://kineis-preprod.cegedim.cloud');
+UPDATE wp_links SET link_image = replace(link_image, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
+UPDATE wp_posts SET guid = replace(guid, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
+UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
 
-UPDATE wp_options SET option_value = replace(option_value, 'https://www.kineis.com','https://kineis-production.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
-UPDATE wp_posts SET guid = replace(guid, 'https://www.kineis.com','https://kineis-production.cegedim.cloud');
-UPDATE wp_posts SET post_content = replace(post_content, 'https://www.kineis.com','https://kineis-production.cegedim.cloud'); 
-UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://www.kineis.com','https://kineis-production.cegedim.cloud');
+UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
+UPDATE wp_posts SET guid = replace(guid, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
+UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud'); 
+UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://kineis-production.cegedim.cloud','https://kineis-preprod.cegedim.cloud');
 
 
 
 NEW WEB
 
 
-UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-production.cegedim.cloud', 'https://www.kineis.com') WHERE option_name = 'home' OR option_name = 'siteurl';
-UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-production.cegedim.cloud', 'https://www.kineis.com');
-UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://kineis-production.cegedim.cloud','https://www.kineis.com');
-UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
-UPDATE wp_links SET link_url = replace(link_url, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
-UPDATE wp_comments SET comment_content = replace(comment_content , 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
-UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-production.cegedim.cloud', 'https://www.kineis.com');
-UPDATE wp_links SET link_image = replace(link_image, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
-UPDATE wp_posts SET guid = replace(guid, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
+UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
+UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+UPDATE wp_links SET link_url = replace(link_url, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+UPDATE wp_comments SET comment_content = replace(comment_content , 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+UPDATE wp_links SET link_image = replace(link_image, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+UPDATE wp_posts SET guid = replace(guid, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
 
-UPDATE wp_options SET option_value = replace(option_value, 'https://www.kineis.com','https://www.kineis.com') WHERE option_name = 'home' OR option_name = 'siteurl';
+UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
 
 UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-production.cegedim.cloud','https://www.kineis.com') WHERE option_name = 'home' OR option_name = 'siteurl';
 UPDATE wp_posts SET guid = replace(guid, 'https://kineis-production.cegedim.cloud','https://www.kineis.com');
@@ -53,7 +53,7 @@ UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-preprod
 UPDATE wp_links SET link_image = replace(link_image, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
 UPDATE wp_posts SET guid = replace(guid, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
 
-UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud') WHERE option_name = 'home' OR option_name = 'siteurl';
+UPDATE wp_options SET option_value = replace(option_value, 'https://kineis-production.cegedim.cloud','https://www.kineis.com') WHERE option_name = 'home' OR option_name = 'siteurl';
 UPDATE wp_posts SET guid = replace(guid, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
 UPDATE wp_posts SET post_content = replace(post_content, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud'); 
 UPDATE wp_postmeta SET meta_value = replace(meta_value,'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
@@ -62,3 +62,59 @@ UPDATE wp_usermeta SET meta_value = replace(meta_value, 'https://kineis-preprod.
 ######Verify
 
 SELECT option_name, option_value FROM wp_options WHERE option_name = 'home' OR option_name = 'siteurl';
+
+
+CREATE USER 'kineis'@'localhost' IDENTIFIED BY 'OW5PHJq7SYrAqJB';
+GRANT ALL PRIVILEGES ON 'wp-kineis'.* TO 'u-kineis'@'localhost';
+FLUSH PRIVILEGES;
+
+SELECT User, Host FROM mysql.user WHERE User = 'kineis';
+ALTER USER 'kineis'@'localhost' IDENTIFIED BY 'WnkIsMREhCflQZ';
+ALTER USER 'u-kineis'@'localhost' IDENTIFIED BY 'OW5PHJq7SYrAqJB';
+
+WnkIsMREhCflQZ'
+
+
+UPDATE mysql.user SET Password=PASSWORD('new_password') WHERE User='u-kineis';
+UPDATE mysql.user SET Password=PASSWORD('new_password') WHERE User='u-kineis';
+
+
+DROP USER 'u-kineis'@'localhost';
+CREATE USER 'u-kineis'@'localhost' IDENTIFIED BY 'OW5PHJq7SYrAqJB';
+GRANT ALL PRIVILEGES ON wp-kineis.* TO 'u-kineis'@'localhost';
+CREATE USER 'u-kineis'@'localhost' IDENTIFIED BY ''OW5PHJq7SYrAqJB';
+UPDATE mysql.user SET Password=PASSWORD('new_password') WHERE User='user_name';
+FLUSH PRIVILEGES;
+UPDATE mysql.user SET Password=PASSWORD('OW5PHJq7SYrAqJB') WHERE User='u-kineis';
+
+
+SELECT DISTINCT CONCAT('SELECT * FROM `', TABLE_SCHEMA, '`.`', TABLE_NAME, '` WHERE `', COLUMN_NAME, '` LIKE ''%https://kineis-preprod.cegedim.cloud%'';') 
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE TABLE_SCHEMA NOT IN ('information_schema', 'mysql', 'performance_schema', 'sys')
+    AND COLUMN_TYPE LIKE '%char%';
+
+
+SELECT CONCAT('UPDATE ', TABLE_SCHEMA, '.', TABLE_NAME, ' SET ', COLUMN_NAME, " = REPLACE(", COLUMN_NAME, ", 'https://kineis-preprod.cegedim.cloud', 'https://kineis-production.cegedim.cloud') ;") AS statement
+FROM information_schema.COLUMNS
+WHERE TABLE_SCHEMA = 'wp-kineis' AND COLUMN_NAME LIKE '%url%';
+
+
+UPDATE `wp-kineis`.`wp_yoast_seo_links`
+SET `region` = REPLACE(`region`, 'https://kineis-preprod.cegedim.cloud', 'https://kineis-production.cegedim.cloud')
+WHERE `region` LIKE '%https://kineis-preprod.cegedim.cloud%';
+
+# Changer l'URL du site
+UPDATE wp_options
+SET option_value = replace(option_value, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud')
+WHERE option_name = 'home'
+OR option_name = 'siteurl';
+# Changer l'URL des GUID
+UPDATE wp_posts
+SET guid = REPLACE (guid, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+# Changer l'URL des médias dans les articles et pages
+UPDATE wp_posts
+SET post_content = REPLACE (post_content, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+# Changer l'URL des données meta
+UPDATE wp_postmeta
+SET meta_value = REPLACE (meta_value, 'https://kineis-preprod.cegedim.cloud','https://kineis-production.cegedim.cloud');
+
